@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionVariableConcept-Roman.otf") format("opentype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionVariableConcept-Italic.otf") format("opentype");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --fg: #111;
+  --bg: #fff;
+  --muted: #888;
+  --link-blue: #9ecbff;
+  --gap: 80px;
+  --side: 48px;
+  --fs-nav: 20px;
+  --img-h: 68vh;
+  --content-top: calc((100vh - var(--img-h)) / 2);
+  --project-lift: 5vh;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Minion Pro", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 20px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+#app { min-height: 100vh; }
+
+/* ---------- Home ---------- */
+.home {
+  padding: calc(var(--content-top) - 3.2em) var(--side) var(--side);
+  min-height: 100vh;
+}
+.home__brand {
+  font-family: "Nunito Sans", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.77em;
+}
+.home__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.196em;
+  line-height: 1.2;
+  font-size: var(--fs-nav);
+}
+.home__nav a {
+  display: inline-block;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.home__nav a:hover { opacity: 0.5; }
+.home__info {
+  margin-top: 1.12em;
+  font-size: var(--fs-nav);
+}
+
+/* ---------- Project page (horizontal) ---------- */
+.project {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: calc(var(--content-top) - var(--project-lift)) var(--side) 0;
+  scroll-behavior: smooth;
+}
+.project::-webkit-scrollbar { height: 8px; }
+.project::-webkit-scrollbar-thumb { background: #e5e5e5; border-radius: 4px; }
+
+.project__meta {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-right: var(--gap);
+  font-size: var(--fs-nav);
+  min-width: 210px;
+}
+.project__meta > div { margin-bottom: 0.2em; }
+.project__back {
+  color: var(--link-blue);
+  cursor: pointer;
+  font-size: 21px;
+  user-select: none;
+  display: inline-block;
+  margin-top: 0.3em;
+}
+.project__back:hover { opacity: 0.7; }
+
+.project__track {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap);
+  padding-right: var(--side);
+}
+.project__track img {
+  height: var(--img-h);
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.project__track .text-block {
+  flex-shrink: 0;
+  height: var(--img-h);
+  width: min(48vw, 720px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-content: start;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.project__track .text-block p { margin: 0 0 1em; }
+.project__track .text-block .jp {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Minion Pro", serif;
+}
+
+.project__track .back-end {
+  flex-shrink: 0;
+  align-self: flex-start;
+  color: var(--link-blue);
+  font-size: 21px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 var(--gap);
+}
+.project__track .back-end:hover { opacity: 0.7; }
+
+.project__empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+/* ---------- Info page ---------- */
+.info {
+  padding: var(--content-top) var(--side) var(--side);
+  min-height: 100vh;
+  font-size: var(--fs-nav);
+}
+.info__back {
+  color: var(--link-blue);
+  cursor: pointer;
+  font-size: 21px;
+  display: inline-block;
+  margin-bottom: 2.4em;
+}
+.info__back:hover { opacity: 0.7; }
+.info__block { margin-bottom: 1.6em; max-width: 540px; }
+.info__block p { margin: 0 0 0.2em; }
+.info__block .jp {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Minion Pro", serif;
+}
+.info__contact { margin-top: 1.6em; }
+.info__contact div { margin-bottom: 0.1em; }
