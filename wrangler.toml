@@ -9,5 +9,5 @@ id = "a19cc20f79ef4ae48d49c2510f52d433"
 
 # 绑定 R2 存储桶
 [[r2_buckets]]
-binding = "R2"
+binding = "IMAGES"
 bucket_name = "sun-chun-image"
