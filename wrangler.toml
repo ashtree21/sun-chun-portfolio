@@ -2,12 +2,12 @@ name = "sun-chun-portfolio"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "public"
 
-# 绑定 KV 数据库
+# 1. KV 绑定 - 这里大概率要叫 DATA
 [[kv_namespaces]]
-binding = "DB"
+binding = "DATA"  
 id = "a19cc20f79ef4ae48d49c2510f52d433"
 
-# 绑定 R2 存储桶
+# 2. R2 绑定 - 已经确认是 IMAGES
 [[r2_buckets]]
 binding = "IMAGES"
 bucket_name = "sun-chun-image"
